@@ -1,0 +1,24 @@
+{
+  "name": "apiVC",
+  "version": "1.0.0",
+  "description": "* Projeto de Engenharia de Software 2019.2 * Backend VoiceCarbo  * Linguagem de programação utilizada:    * Javascript   * Nodejs * Framework utilizado:   * Express * Banco de dados utilizado:   * PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chicofariasneto/apiVC.git"
+  },
+  "keywords": [],
+  "author": "chicofariasneto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chicofariasneto/apiVC/issues"
+  },
+  "homepage": "https://github.com/chicofariasneto/apiVC#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
