@@ -26,6 +26,13 @@ router.get('/', async (request, response) => {
                 alimentos.push(j)
         }
 
+        // Ordena os alimentos
+        alimentos.sort(function(element1, element2) {
+            if (element1.nome > element2.nome) return 1
+            if (element1.nome < element2.nome) return -1
+            return 0
+        })
+
         return response.status(200).send({ alimentos })
     } catch (err) {
         console.log(err)
