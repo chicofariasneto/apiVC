@@ -4,9 +4,9 @@ CREATE SCHEMA voiceCarbo;
 CREATE TABLE voiceCarbo.alimento (
     nome VARCHAR(100) NOT NULL,
     medida VARCHAR(100) NOT NULL,
-    peso REAL,
     kcal REAL,
     carboidratos REAL,
+    peso REAL,
     grupo VARCHAR(100),
     CONSTRAINT pk_alimento PRIMARY KEY (nome)
 );
