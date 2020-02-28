@@ -16,20 +16,17 @@ router.get('/', async (request, response) => {
     try {
         const { nomes } = request.body
         
-        var result = []
+        var alimentos = []
 
         for (const i of nomes) {
             const { nome } = i
-            resultAlimento = await buscarAlimentos(nome)
+            resultAlimento = await buscarAlimentos(nome.toLowerCase())
 
             for (const j of resultAlimento)
-                result.push(j)
+                alimentos.push(j)
         }
 
-        return response.status(200).send({
-            sucess: "It works!",
-            result
-        })
+        return response.status(200).send({ alimentos })
     } catch (err) {
         console.log(err)
         return response.status(400).send({ error: 'It not works!' })
