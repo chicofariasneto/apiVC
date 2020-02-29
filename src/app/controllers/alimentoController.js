@@ -36,7 +36,7 @@ router.get('/', async (request, response) => {
         return response.status(200).send({ alimentos })
     } catch (err) {
         console.log(err)
-        return response.status(400).send({ error: 'It not works!' })
+        return response.status(400).send({ err })
     }
 })
 
