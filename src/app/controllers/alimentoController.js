@@ -12,7 +12,7 @@ const {
 const router = express.Router()
 // ### IMPORTS ###
 
-router.get('/', async (request, response) => {
+router.post('/', async (request, response) => {
     try {
         const { nomes } = request.body
         
