@@ -12,9 +12,9 @@ CREATE TABLE voiceCarbo.alimento (
 );
 
 CREATE TABLE voiceCarbo.pessoa (
-    nome VARCHAR(45) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    senha VARCHAR(45) NOT NULL,
+    senha VARCHAR(120) NOT NULL,
     nascimento VARCHAR(10) NOT NULL,
     CONSTRAINT pk_pessoa PRIMARY KEY (email)
 );
