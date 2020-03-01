@@ -19,7 +19,7 @@ const router = express.Router()
 
 router.post('/cadastrar', async (request, response) => {
     try {
-        const { nome, email, senha, nascimento } = request.body
+        const { nome, email, senha, nascimento, medida } = request.body
 
         const existPessoa = await isTherePessoa(email)
         if (existPessoa)
@@ -27,7 +27,7 @@ router.post('/cadastrar', async (request, response) => {
         
         const senhaCrypt = await cryptDado(senha)
 
-        await pool.query(insertPessoa, [nome, email, senhaCrypt, nascimento])
+        await pool.query(insertPessoa, [nome, email, senhaCrypt, nascimento, medida])
 
         const pessoa = await findPessoa(email)
 

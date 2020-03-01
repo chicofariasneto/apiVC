@@ -1,7 +1,8 @@
 const { pool } = require('../../database/index')
 
 const {
-    selectAlimentosByNome
+    selectAlimentosByNome,
+    selectAlimentoByNome
 } = require('../models/alimentoModel')
 
 const buscarAlimentos = async (nome) => {
@@ -10,6 +11,12 @@ const buscarAlimentos = async (nome) => {
     return resultAlimentos.rows
 }
 
+const buscarAlimento = async (nome) => {
+    const resultAlimento = await pool.query(selectAlimentoByNome, [nome])
+    return resultAlimento.rows[0]
+}
+
 module.exports = {
     buscarAlimentos,
+    buscarAlimento
 }
