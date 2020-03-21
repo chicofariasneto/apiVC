@@ -10,7 +10,10 @@ const {
     gerarToken
 } = require('../logic/pessoaLogic')
 
-const { insertPessoa } = require('../models/pessoaModel')
+const {
+    insertPessoa,
+    updatePessoa 
+} = require('../models/pessoaModel')
 
 const express = require('express')
 
@@ -63,6 +66,26 @@ router.post('/login', async (request, response) => {
             pessoa,
             token: gerarToken({ email: pessoa.email })
         })
+    }
+    catch (err) {
+        console.log(err)
+        return response.status(400).send({ error: "Check logs" })
+    }
+})
+
+router.put('/atualizarInsulina', async (request, response) => {
+    try {
+        const { email, insulina } = request.body
+
+        existPessoa = await isTherePessoa(email)
+        if (!existPessoa)
+            return response.status(400).send({ error: "Email not found" })
+
+        const update = await updatePessoa('medida', insulina, email)
+        //console.log(update)
+        await pool.query(update)
+
+        return response.status(200).send({ sucess: "updated successfully" })
     }
     catch (err) {
         console.log(err)
