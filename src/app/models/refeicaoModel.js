@@ -2,7 +2,7 @@
 CREATE TABLE voiceCarbo.refeicao (
     id_refeicao SERIAL NOT NULL,
     tipo VARCHAR(45) NOT NULL,
-    horario TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idata Date DEFAULT CURRENT_TIMESTAMP,
     total_carboidratos REAL NOT NULL,
     total_kcal REAL NOT NULL,
     insulina INT NOT NULL,
@@ -16,6 +16,8 @@ CREATE TABLE voiceCarbo.refeicao (
 
 const selectRefeicaoId = 'SELECT * FROM voiceCarbo.refeicao WHERE id_refeicao = $1'
 
+const selectRefeicoesIdata = 'select * from voiceCarbo.refeicao WHERE email = $1 and idata = $2 ORDER BY id_refeicao ASC'
+
 const insertRefeicao = 'INSERT INTO voiceCarbo.refeicao VALUES (DEFAULT, $1, DEFAULT, 0.0, 0.0, 0, $2, $3) RETURNING id_refeicao'
 
 const updateRefeicao = (param1, param2, param3) => {
@@ -24,6 +26,7 @@ const updateRefeicao = (param1, param2, param3) => {
 
 module.exports = {
     selectRefeicaoId,
+    selectRefeicoesIdata,
     insertRefeicao,
     updateRefeicao
 }

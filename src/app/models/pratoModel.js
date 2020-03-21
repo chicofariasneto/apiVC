@@ -10,6 +10,8 @@ CREATE TABLE voiceCarbo.prato (
 );
 */
 
+const selectPrato = 'SELECT * FROM voiceCarbo.prato'
+
 const selectPratoId = 'SELECT * FROM voiceCarbo.prato WHERE id_prato = $1'
 
 const selectPratosId = 'SELECT * FROM voiceCarbo.prato WHERE id_refeicao = $1'
@@ -21,6 +23,7 @@ const updatePrato = (param1, param2, param3) => {
 }
 
 module.exports = {
+    selectPrato,
     selectPratoId,
     selectPratosId,
     insertPrato,

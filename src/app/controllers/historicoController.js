@@ -6,17 +6,18 @@ const express = require('express')
 const router = express.Router()
 
 const {
-
-} = require()
+  historicoIdata
+} = require('../logic/refeicaoLogic')
 
 // ### IMPORTS ###
 
 
 router.post('/solicitar', async (request, response) => {
   try {
-    const { idata, email } = request.body
+    const { email, idata } = request.body
+    const resultado = await historicoIdata(email, idata)
 
-
+    return response.status(200).send({ resultado })
 
   } catch (err) {
     console.log(err)

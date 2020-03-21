@@ -33,7 +33,7 @@ CREATE TABLE voiceCarbo.historico (
 CREATE TABLE voiceCarbo.refeicao (
     id_refeicao SERIAL NOT NULL,
     tipo VARCHAR(45) NOT NULL,
-    horario TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idata Date DEFAULT CURRENT_TIMESTAMP,
     total_carboidratos REAL NOT NULL,
     total_kcal REAL NOT NULL,
     insulina INT NOT NULL,
