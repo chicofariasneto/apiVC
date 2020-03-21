@@ -1,0 +1,9 @@
+{
+    "pessoa": {
+      "nome": "admin",
+      "email": "admin@admin.com",
+      "nascimento": "00/00/0000",
+      "medida": 20
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTU4NDgxMjE0MywiZXhwIjoxNTg0ODk4NTQzfQ.Hj0T8zSdlY1fk7-k0dwG7KR6FWQp1y7miIVGF5SbWEI"
+}
