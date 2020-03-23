@@ -9,6 +9,8 @@ const {
     selectRefeicaoEmail
 } = require('../models/refeicaoModel')
 
+// Funcao logica para formatar a lista
+// das refeicoes favoritas de um usuario
 const listarFavoritas = async (email) => {
     const resultadoFavoritas = await pool.query(selectFavoritas, [email])
     const resultadoRefeicoes = await pool.query(selectRefeicaoEmail, [email])
@@ -23,6 +25,7 @@ const listarFavoritas = async (email) => {
     return resultado
 }
 
+// Verifica se uma refeicao ja eh favorita
 const isFavorita = async (email, id_refeicao) => {
     const resultadoFavorita = await pool.query(selectFavorita, [email, id_refeicao])
 

@@ -20,6 +20,7 @@ const express = require('express')
 const router = express.Router()
 // ### IMPORTS ###
 
+// Rota para de cadastrar no aplicativo
 router.post('/cadastrar', async (request, response) => {
     try {
         const { nome, email, senha, nascimento, medida } = request.body
@@ -47,6 +48,7 @@ router.post('/cadastrar', async (request, response) => {
     }
 })
 
+// Rota para fazer login no aplicativo
 router.post('/login', async (request, response) => {
     try {
         const { email, senha } = request.body
@@ -73,6 +75,7 @@ router.post('/login', async (request, response) => {
     }
 })
 
+// Rota para atualizar a medida de insulina do usuario
 router.put('/atualizarInsulina', async (request, response) => {
     try {
         const { email, insulina } = request.body

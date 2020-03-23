@@ -6,6 +6,8 @@ const {
     insertHistorico
 } = require('../models/historicoModel')
 
+// Funcao para construir o historico do dia
+// de uma usuario
 const buildHistorico = async (iData, email) => {
     const resultHistorico = await pool.query(selectHistoricoIDataEmail, [iData, email])
     
@@ -18,6 +20,8 @@ const buildHistorico = async (iData, email) => {
     return resultHistoricoCreate.rows[0].id_historico
 }
 
+// Verifica se existe um historico com
+// o id passado
 const buscarHistorico = async (id_historico) => {
     const resultHistorico = await pool.query(selectHistoricoId, [id_historico])
     return resultHistorico.rows[0]

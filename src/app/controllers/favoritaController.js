@@ -17,6 +17,7 @@ const {
 
 const router = express.Router()
 
+// A rota marca uma refeicao como favorita
 router.post('/inserir', async (request, response) => {
     try {
         const { email, id_refeicao } = request.body
@@ -39,6 +40,7 @@ router.post('/inserir', async (request, response) => {
     }
 })
 
+// A rota retorna uma lista das refeicoes favoritas de um usuario
 router.post('/listar', async (request, response) => {
     try {
         const { email } = request.body

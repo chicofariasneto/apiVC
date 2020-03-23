@@ -3,9 +3,9 @@ const jwt = require('jsonwebtoken')
 const authConfig = require('../../config/auth')
 // ### IMPORTS ###
 
-/* A funcao verifica se o token de acesso e valido respeitando
-   o seguinte formato: "Bearer" <tokenAcesso>, o token eh dividido
-   e verificado se pertence ao "secret". */
+// A funcao verifica se o token de acesso e valido respeitando
+// o seguinte formato: "Bearer" <tokenAcesso>, o token eh dividido
+// e verificado se pertence ao "secret".
 module.exports = (request, response, next) => {
     
     const authHeader = request.headers.authorization

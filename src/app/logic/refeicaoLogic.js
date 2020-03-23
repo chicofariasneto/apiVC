@@ -10,6 +10,8 @@ const {
     selectPratosId
 } = require('../models/pratoModel')
 
+// Funcao logica para formatar a saida
+// de uma busca por uma refeicao no banco
 const buscarRefeicao = async (id_refeicao) => {
     const resultadoRefeicao = await pool.query(selectRefeicaoId, [id_refeicao])
     const resultadoPratos = await pool.query(selectPratosId, [id_refeicao])
@@ -22,6 +24,8 @@ const buscarRefeicao = async (id_refeicao) => {
     return resultado
 }
 
+// A funcao logica formata o historico de um dia
+// e o retorna
 const historicoIdata = async (email, idata) => {
     const resultadoRefeicoes = await pool.query(selectRefeicoesIdata, [email, idata])
     const resultadoPratos = await pool.query(selectPrato)

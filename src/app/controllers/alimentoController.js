@@ -12,6 +12,8 @@ const {
 const router = express.Router()
 // ### IMPORTS ###
 
+// Esta rota recebe uma lista com nomes de alimentos,
+// e retorna os alimentos cadastrados no banco
 router.post('/', async (request, response) => {
     try {
         const { nomes } = request.body

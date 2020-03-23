@@ -11,7 +11,7 @@ const {
 
 // ### IMPORTS ###
 
-
+// A rota retorna o historico de refeicao do dia
 router.post('/solicitar', async (request, response) => {
   try {
     const { email, idata } = request.body

@@ -35,6 +35,7 @@ const {
     insertPrato
 } = require('../models/pratoModel')
 
+// Rota para registrar uma refeicao
 router.post('/registrar', async (request, response) => {
     try {
         const { idata, email, tipo } = request.body
@@ -64,6 +65,7 @@ router.post('/registrar', async (request, response) => {
             await pool.query(insertPrato, [nome, quantidade, id_refeicao])
         }
 
+        // Atualizar valores na refeicao
         const updateCarboidrato = await updateRefeicao('total_carboidratos', refeicaoCarboidrato, id_refeicao)
         await pool.query(updateCarboidrato)
         const updateCaloria = await updateRefeicao('total_kcal', refeicaoCaloria, id_refeicao)
@@ -71,6 +73,7 @@ router.post('/registrar', async (request, response) => {
         const updateInsulina = await updateRefeicao('insulina', Math.floor(refeicaoCarboidrato / pessoa.medida), id_refeicao)
         await pool.query(updateInsulina)
         
+        // Atualizar valores no historico
         const resultadoHistorico = await buscarHistorico(id_historico)
         const updateHistoricoCarboidratos = await updateHistorico('total_carboidratos', resultadoHistorico.total_carboidratos + refeicaoCarboidrato, id_historico)
         await pool.query(updateHistoricoCarboidratos)
