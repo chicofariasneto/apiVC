@@ -55,8 +55,8 @@ CREATE TABLE voiceCarbo.prato (
 );
 
 CREATE TABLE voiceCarbo.favorita (
-    id_favorita SERIAL NOT NULL,
     id_refeicao SERIAL NOT NULL,
-    CONSTRAINT pk_favorita PRIMARY KEY (id_favorita),
-    CONSTRAINT fk_refeicao FOREIGN KEY (id_refeicao) REFERENCES voiceCarbo.refeicao (id_refeicao) ON DELETE SET NULL ON UPDATE CASCADE
+    email VARCHAR(100) NOT NULL,
+    CONSTRAINT fk_refeicao FOREIGN KEY (id_refeicao) REFERENCES voiceCarbo.refeicao (id_refeicao) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT fk_pessoa FOREIGN KEY (email) REFERENCES voiceCarbo.pessoa (email) ON DELETE SET NULL ON UPDATE CASCADE
 );

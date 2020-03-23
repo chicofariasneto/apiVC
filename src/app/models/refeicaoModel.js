@@ -16,6 +16,8 @@ CREATE TABLE voiceCarbo.refeicao (
 
 const selectRefeicaoId = 'SELECT * FROM voiceCarbo.refeicao WHERE id_refeicao = $1'
 
+const selectRefeicaoEmail = 'SELECT * FROM voiceCarbo.refeicao WHERE email = $1'
+
 const selectRefeicoesIdata = 'select * from voiceCarbo.refeicao WHERE email = $1 and idata = $2 ORDER BY id_refeicao ASC'
 
 const insertRefeicao = 'INSERT INTO voiceCarbo.refeicao VALUES (DEFAULT, $1, DEFAULT, 0.0, 0.0, 0, $2, $3) RETURNING id_refeicao'
@@ -26,6 +28,7 @@ const updateRefeicao = (param1, param2, param3) => {
 
 module.exports = {
     selectRefeicaoId,
+    selectRefeicaoEmail,
     selectRefeicoesIdata,
     insertRefeicao,
     updateRefeicao
