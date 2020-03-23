@@ -7,7 +7,8 @@ const {
 } = require('../models/favoritaModel')
 
 const {
-    listarFavoritas
+    listarFavoritas,
+    isFavorita
 } = require('../logic/favoritaLogic')
 
 const {
@@ -23,6 +24,10 @@ router.post('/inserir', async (request, response) => {
         const existePessoa = await isTherePessoa(email)
         if (!existePessoa)
             return response.status(400).send({ error: "Email not found"})
+
+        const existeRefeicao = await isFavorita(email, id_refeicao)
+        if (existeRefeicao)
+        return response.status(400).send({ error: "Already favorited"})
 
         await pool.query(insertFavorita, [id_refeicao, email])
 
@@ -44,7 +49,7 @@ router.post('/listar', async (request, response) => {
 
         const resultado = await listarFavoritas(email)
 
-        console.log(resultado)
+        //console.log(resultado)
 
         return response.status(200).send({ resultado })
     }

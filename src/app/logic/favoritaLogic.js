@@ -1,7 +1,8 @@
 const { pool } = require('../../database')
 
 const {
-    selectFavoritas
+    selectFavoritas,
+    selectFavorita
 } = require('../models/favoritaModel')
 
 const {
@@ -22,6 +23,13 @@ const listarFavoritas = async (email) => {
     return resultado
 }
 
+const isFavorita = async (email, id_refeicao) => {
+    const resultadoFavorita = await pool.query(selectFavorita, [email, id_refeicao])
+
+    return resultadoFavorita.rowCount > 0
+}
+
 module.exports = {
-    listarFavoritas
+    listarFavoritas,
+    isFavorita
 }
