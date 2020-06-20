@@ -1,7 +1,9 @@
-# apiVC
+## apiVC
+API desenvolvida em nodeJS, para atender requisições do aplicativo em desenvolvimento VoiceCarbo.
 
-* Projeto de Engenharia de Software 2019.2
-* Backend VoiceCarbo 
+### Sobre o apiVC
+* Projeto de Engenharia de Software - UFS 2019.2
+* Backend VoiceCarbo
 * Linguagem de programação utilizada: 
   * Javascript
   * Nodejs
@@ -9,10 +11,15 @@
   * Express
 * Banco de dados utilizado:
   * PostgreSQL
-  
-   ### Alunos
+
+### Como utilizar
+Temos um projeto nodeJS, então inicialmente é preciso instalar as dependências, execute:
+
+```sh
+ npm install
+```
+
+I'll finish this, tomorrow
+
+### Autor
 [Francisco Rodrigues](https://github.com/chicofariasneto)
-
-## Sobre o apiVC
-
-API desenvolvida em nodeJS, para atender requisições do aplicativo desenvolvido pela Universidade Federal de Sergipe, pelos alunos Francisco Rodrigues e Lucas Expedito.
