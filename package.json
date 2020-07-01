@@ -1,10 +1,11 @@
 {
   "name": "apivc",
   "version": "1.0.0",
-  "description": "* Projeto de Engenharia de Software 2019.2 * Backend VoiceCarbo  * Linguagem de programação utilizada:    * Javascript   * Nodejs * Framework utilizado:   * Express * Banco de dados utilizado:   * PostgreSQL",
+  "description": "This is the backend of the VoiceCarbo apk, which is an api in nodeJs that uses postgreSQL as database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "jsonwebtoken": "^8.5.1",
     "bcryptjs": "^2.4.3",
     "pg": "^7.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

@@ -1,19 +1,24 @@
-const { Pool } = require('pg');
+const {
+    Pool
+} = require('pg')
 
-/* Conexao do banco de dados local *//*
+// Localhost
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'apis',
+    database: 'postgres',
     password: 'postgres',
     port: 5432,
 })
-*/
-/* Conexao do banco de dados com o Heroku */
+/*
+// heroku
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: true
-  });
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+*/
 
 module.exports = {
     pool,
